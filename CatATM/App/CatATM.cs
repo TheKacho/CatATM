@@ -9,10 +9,12 @@ namespace CatATM
         static void Main(string[] args)
         {
             AppScreen.Welcome();
+            string accountNumber = Utilities.UserInput("Account Number");
+            Console.WriteLine($"Your account number is {accountNumber}");
+            Utilities.PressEnter();
+
 
             string pin = RequestPIN();
-            
-
             Console.ReadKey();
         }
 
