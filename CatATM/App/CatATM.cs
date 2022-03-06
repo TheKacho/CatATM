@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatATM.UI;
+using System;
 using System.Text;
 
 namespace CatATM
@@ -7,17 +8,8 @@ namespace CatATM
     {
         static void Main(string[] args)
         {
-            Console.Clear();
+            AppScreen.Welcome();
 
-            Console.Title = "Cat ATM";
-            Console.ForegroundColor = ConsoleColor.White;
-
-
-            Console.WriteLine("\nHello human! First, please enter your Cat account info.\n");
-            Console.WriteLine("\nPress Enter to proceed...\n");
-
-            Console.WriteLine("Please enter your ID, human.");
-            Console.WriteLine("Note: This cat will only read ID numbers up to 9 digits. \nAnything over that will upset the cat!\n");
             string pin = RequestPIN();
             
 
