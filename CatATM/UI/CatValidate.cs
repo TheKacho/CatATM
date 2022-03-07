@@ -9,6 +9,9 @@ namespace CatATM.UI
 {
     public static class CatValidate
     {
+
+        //takes the user's input and converts the string to see if it is valid or not
+        // if there are any non-integer values or letters in the string, it will prompt an error message
         public static T Convert<T>(string prompt)
         {
             bool valid = false;
@@ -32,7 +35,7 @@ namespace CatATM.UI
                 }
                 catch
                 {
-                    Console.WriteLine("The cat hisses angrily at you! \nIts trying to say invalid input, try again!\n");
+                    Console.WriteLine("\nThe cat hisses angrily at you!\n \nIts trying to say invalid input, try again!\n");
                 }
             }
             return default;

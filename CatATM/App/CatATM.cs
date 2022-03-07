@@ -9,7 +9,7 @@ namespace CatATM
         static void Main(string[] args)
         {
             AppScreen.Welcome();
-            string accountNumber = Utilities.UserInput("Account Number");
+            long accountNumber = CatValidate.Convert<long>("account number");
             Console.WriteLine($"Your account number is {accountNumber}");
             Utilities.PressEnter();
 
