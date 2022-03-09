@@ -35,7 +35,7 @@ namespace CatATM.UI
                 }
                 catch
                 {
-                    Console.WriteLine("\nThe cat hisses angrily at you!\n \nIts trying to say invalid input, try again!\n");
+                    Utilities.PrintMsg("\nThe cat hisses angrily at you!\n \nIts trying to say invalid input, try again!\n", false);
                 }
             }
             return default;

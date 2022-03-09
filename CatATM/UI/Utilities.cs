@@ -8,6 +8,22 @@ namespace CatATM.UI
 {
     public static class Utilities
     {
+        public static void PrintMsg(string msg, bool success = true)
+        {
+            if (success)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;               
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            Console.WriteLine(msg);
+            Console.ForegroundColor = ConsoleColor.White;
+            PressEnter();
+        }
+
+
         public static string UserInput(string prompt) 
         { 
             Console.WriteLine($"Enter {prompt}");
