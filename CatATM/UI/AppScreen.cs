@@ -20,7 +20,7 @@ namespace CatATM.UI
 
 
             Console.WriteLine("Please enter your ID, human.");
-            Console.WriteLine("Note: This cat will only read ID numbers up to 9 digits. \nAnything over that will upset the cat!\n");
+            Console.WriteLine("Note: This cat is very picky about its numbers. \nIf you input incorrectly, it will upset the cat!\n");
             Utilities.PressEnter();
         }
 
