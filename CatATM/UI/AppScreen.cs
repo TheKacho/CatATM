@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CatATM.Domain.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,19 @@ namespace CatATM.UI
             Utilities.PressEnter();
         }
 
-        
+        internal static UserAccount UserLoginForm()
+        {
+            UserAccount tempUserAccount = new UserAccount();
+
+            tempUserAccount.AccountNumber = CatValidate.Convert<long>("account number");
+            tempUserAccount.AccountPin = Convert.ToInt32(Utilities.GetSecretInfo("Please enter your account PIN."));
+            return tempUserAccount;
+        }
+
+        internal static void LogProcess()
+        {
+            Console.WriteLine("\nThe cat is checking your account information and PIN...");
+            Utilities.PrintLoadingDots();
+        }
     }
 }

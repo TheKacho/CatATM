@@ -12,8 +12,9 @@ namespace CatATM.App
         static void Main(string[] args)
         {
             AppScreen.Welcome();
-            long accountNumber = CatValidate.Convert<long>("account number");
-            Console.WriteLine($"Your account number is {accountNumber}");
+            CatATM catAtm = new CatATM();
+
+            catAtm.CheckUserAcctNumAndPin();
 
 
             Utilities.PressEnter();

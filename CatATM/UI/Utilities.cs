@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CatATM.UI
@@ -9,7 +10,7 @@ namespace CatATM.UI
     public static class Utilities
     {
         public static string GetSecretInfo(string prompt)
-        {
+        {   //this prompts the user to enter their pin number, displaying in asterisks rather than numbers for security purposes
             bool isPrompt = true;
 
             string asterisks = "";
@@ -20,19 +21,22 @@ namespace CatATM.UI
             {
                 if (isPrompt)
                     Console.WriteLine(prompt);
+                isPrompt = false;
+
                 ConsoleKeyInfo inputKey = Console.ReadKey(true);
 
                 if (inputKey.Key == ConsoleKey.Enter)
                 {
-                    if(input.Length == 6)
+                    if(input.Length == 4)
                     {
                         break;
                     }
                     else
                     {
-                        PrintMsg("\nThe cat hisses angrily! \nIt is asking for your 6 digits!", false);
+                        PrintMsg("\nThe cat hisses angrily! \nPlease enter in your correct PIN.", false);
                         isPrompt = true;
                         input.Clear();
+                        continue;
                     }
                 }
                 if(inputKey.Key == ConsoleKey.Backspace && input.Length > 0)
@@ -67,6 +71,17 @@ namespace CatATM.UI
         { 
             Console.WriteLine($"Enter {prompt}");
             return Console.ReadLine();
+        }
+
+        public static void PrintLoadingDots(int timer = 10)
+        {
+            
+            for (int i = 0; i < timer; i++)
+            {
+                Console.Write(".");
+                Thread.Sleep(200);
+            }
+            Console.Clear();
         }
         public static void PressEnter()
         {

@@ -4,6 +4,7 @@ using CatATM.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace CatATM
 {
@@ -15,12 +16,12 @@ namespace CatATM
         public void CheckUserAcctNumAndPin()
         {
             bool isCorrectLog = false;
-
-            UserAccount tempUserAccount = new UserAccount();
-
-            tempUserAccount.AccountNumber = CatValidate.Convert<long>("account number");
-            tempUserAccount.AccountPin = 
+            UserAccount inputAccount = AppScreen.UserLoginForm();
+            AppScreen.LogProcess();
+           
         }
+
+       
 
         public void InitializeData()
         {
