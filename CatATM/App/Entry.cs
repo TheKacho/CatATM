@@ -13,8 +13,9 @@ namespace CatATM.App
         {
             AppScreen.Welcome();
             CatATM catAtm = new CatATM();
-
+            catAtm.InitializeData();
             catAtm.CheckUserAcctNumAndPin();
+            catAtm.WelcomeBack();
 
 
             Utilities.PressEnter();

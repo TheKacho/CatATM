@@ -39,5 +39,14 @@ namespace CatATM.UI
             Console.WriteLine("\nThe cat is checking your account information and PIN...");
             Utilities.PrintLoadingDots();
         }
+
+        internal static void AcctLockout()
+        {
+            Console.Clear();
+            Utilities.PrintMsg("The cat got too angry, it has locked your account! " +
+                "\nPlease contact a customer representative to unlock your account.\n ", true);
+            Utilities.PressEnter();
+            Environment.Exit(1);
+        }
     }
 }

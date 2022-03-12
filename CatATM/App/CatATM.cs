@@ -16,12 +16,53 @@ namespace CatATM
         public void CheckUserAcctNumAndPin()
         {
             bool isCorrectLog = false;
-            UserAccount inputAccount = AppScreen.UserLoginForm();
-            AppScreen.LogProcess();
-           
+            while (isCorrectLog == false)
+            {
+                UserAccount inputAccount = AppScreen.UserLoginForm();
+                AppScreen.LogProcess();
+                foreach(UserAccount account in userAccountList)
+                {
+                    selectedAcct = account;
+                    if (inputAccount.AccountNumber.Equals(selectedAcct.AccountNumber))
+                    {
+                        selectedAcct.TotalLog++;
+
+                        if (inputAccount.AccountPin.Equals(selectedAcct.AccountPin))
+                        {
+                            selectedAcct = account;
+
+                            if(selectedAcct.IsLocked || selectedAcct.TotalLog > 3)
+                            {
+                                //Tells the user that their account is already locked or locked after 3 unsuccessful attempts
+                                AppScreen.AcctLockout();
+                            }
+                            else //else if logged in correctly, the total log count resets to 0
+                            {
+                                selectedAcct.TotalLog = 0;
+                                isCorrectLog = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (isCorrectLog == false) // tells user that it has 3 tries to log in successfully or they get locked out
+                    {
+                        Utilities.PrintMsg("\n The cat hisses at you!! It says invalid account number or PIN.", false);
+                        selectedAcct.IsLocked = selectedAcct.TotalLog == 3;
+                        if (selectedAcct.IsLocked)
+                        {
+                            AppScreen.AcctLockout();
+                        }
+                    }
+                    Console.Clear();
+                }
+            }
+            
         }
 
-       
+       public void WelcomeBack()
+        {
+            Console.WriteLine($"Welcome back, {selectedAcct.Name}. ");
+        }
 
         public void InitializeData()
         {
@@ -33,7 +74,12 @@ namespace CatATM
             };
           
         }
-        
-        
+
+        // TODO: Add in options after login (feed the cat, pet the cat, play with cat with some toys and log out)
+
+        public void CatChoices()
+        {
+
+        }
     }
 }
