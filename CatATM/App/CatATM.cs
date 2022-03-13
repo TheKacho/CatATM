@@ -75,11 +75,88 @@ namespace CatATM
           
         }
 
-        // TODO: Add in options after login (feed the cat, pet the cat, play with cat with some toys and log out)
+        // TODO: Add in options after login (feed the cat, pet the cat, play with cat and log out)
 
-        public void CatChoices()
+        public static void CatChoices()
         {
+            string function;
 
+            List<string> petCat = new List<string>();
+            petCat.Add("Pet the cat");
+            petCat.Add("pet cat");
+            petCat.Add("pet");
+            petCat.Add("Pet");
+
+            while (true)
+            {
+                Console.WriteLine("How do you want to interact with the cat?");
+                Console.WriteLine("Pet the cat, feed it with treats, play around with toys, or log out?");
+                Console.Write("Which would you like to do?");
+                
+                if (petCat.Contains(function)) //function on this one does not want to work
+                {
+                    PetCat();
+                    break;
+                }
+                else if(function == "Feed the Cat" || function == "feed cat")
+                {
+                    FeedCat();
+                    break;
+                }
+                else if(function == "Play with Cat" || function == "play cat")
+                {
+                    PlayCat();
+                    break;
+                }
+                else if(function == "Log out" || function == "log out" || function == "logout")
+                {
+                    Console.WriteLine("Thanks fpr using the Cat ATM.");
+                    Console.WriteLine("Press enter to log out");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    Console.WriteLine("Please type in your choice:");
+                }
+            }
+        }
+
+        
+
+        private static void FeedCat()
+        {
+            int feedCat;
+            try
+            {
+                Console.Write("How much food will you feed the cat?");
+                feedCat = Convert.ToInt32(Console.ReadLine());
+
+                if(feedCat >= 10)
+                {
+                    Console.WriteLine("Cat Error!! Invalid food amount! Your choice must be lower than 10 ounces!");
+                    FeedCat();
+                }
+                else
+                {
+                    Console.WriteLine("You have fed " + feedCat + "ounces of food!");
+                    CatChoices();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                FeedCat();
+            }
+        }
+
+        private static void PetCat()
+        {
+            throw new NotImplementedException();
+        }
+        private static void PlayCat()
+        {
+            throw new NotImplementedException();
         }
     }
 }
