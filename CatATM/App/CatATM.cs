@@ -64,6 +64,8 @@ namespace CatATM
             Console.WriteLine($"Welcome back, {selectedAcct.Name}. ");
         }
 
+
+
         public void InitializeData()
         {
             userAccountList = new List<UserAccount>
@@ -77,7 +79,7 @@ namespace CatATM
 
         // TODO: Add in options after login (feed the cat, pet the cat, play with cat and log out)
 
-        public static void CatChoices()
+        public void CatChoices()
         {
             string function = ""; // fixed the problem, but this portion does not seem to run after login, it just ends
 
@@ -122,9 +124,9 @@ namespace CatATM
             }
         }
 
-        
 
-        private static void FeedCat()
+
+        private void FeedCat()
         {
             int feedCat;
             try
@@ -132,21 +134,18 @@ namespace CatATM
                 Console.Write("How much food will you feed the cat?");
                 feedCat = Convert.ToInt32(Console.ReadLine());
 
-                if(feedCat >= 10)
+                if (feedCat >= 10)
                 {
                     Console.WriteLine("Cat Error!! Invalid food amount! Your choice must be lower than 10 ounces!");
-                    FeedCat();
                 }
                 else
                 {
                     Console.WriteLine("You have fed " + feedCat + "ounces of food!");
-                    CatChoices();
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                FeedCat();
             }
         }
 

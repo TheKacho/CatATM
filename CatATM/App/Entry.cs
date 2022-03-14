@@ -16,7 +16,7 @@ namespace CatATM.App
             catAtm.InitializeData();
             catAtm.CheckUserAcctNumAndPin();
             catAtm.WelcomeBack();
-
+            catAtm.CatChoices();
 
             Utilities.PressEnter();
 
