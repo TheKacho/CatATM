@@ -94,8 +94,9 @@ namespace CatATM
                 Console.WriteLine("How do you want to interact with the cat?");
                 Console.WriteLine("Pet the cat, feed it with treats, play around with toys, or log out?");
                 Console.Write("Which would you like to do?");
+                Console.ReadLine(); // this requires the user to type in an option, but it does not go to said option
                 
-                if (petCat.Contains(function)) //function on this one does not want to work
+                if (petCat.Contains(function)) 
                 {
                     PetCat();
                     break;
@@ -124,7 +125,14 @@ namespace CatATM
             }
         }
 
-
+        private void PetCat()
+        {
+            int petCat;
+            try
+            {
+                Console.Write("How many pets will you pet the cat?");
+            }
+        }
 
         private void FeedCat()
         {
@@ -151,10 +159,7 @@ namespace CatATM
 
 
         // TODO: create full functions for the rest of the options
-        private static void PetCat()
-        {
-            throw new NotImplementedException();
-        }
+        
         private static void PlayCat()
         {
             throw new NotImplementedException();
