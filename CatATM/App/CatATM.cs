@@ -81,7 +81,7 @@ namespace CatATM
 
         public void CatChoices()
         {
-            string function = ""; // fixed the problem, but this portion does not seem to run after login, it just ends
+            string function = "";
 
             List<string> petCat = new List<string>();
             petCat.Add("Pet the cat");
