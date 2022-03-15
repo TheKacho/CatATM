@@ -77,7 +77,7 @@ namespace CatATM
           
         }
 
-        // TODO: Add in options after login (feed the cat, pet the cat, play with cat and log out)
+        
 
         public void CatChoices()
         {
@@ -94,7 +94,7 @@ namespace CatATM
                 Console.WriteLine("\nHow do you want to interact with the cat?\n");
                 Console.WriteLine("\nPet the cat, feed it with treats, play around with toys, or log out?\n");
                 Console.Write("\nWhich would you like to do?\n");
-                function = Console.ReadLine(); // this requires the user to type in an option, but it does not go to said option
+                function = Console.ReadLine(); // this requires the user to type in the key words in order to get to the option
 
                 if (petCat.Contains(function)) 
                 {
