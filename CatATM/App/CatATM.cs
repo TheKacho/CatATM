@@ -91,11 +91,11 @@ namespace CatATM
 
             while (true)
             {
-                Console.WriteLine("How do you want to interact with the cat?");
-                Console.WriteLine("Pet the cat, feed it with treats, play around with toys, or log out?");
-                Console.Write("Which would you like to do?");
-                Console.ReadLine(); // this requires the user to type in an option, but it does not go to said option
-                
+                Console.WriteLine("\nHow do you want to interact with the cat?\n");
+                Console.WriteLine("\nPet the cat, feed it with treats, play around with toys, or log out?\n");
+                Console.Write("\nWhich would you like to do?\n");
+                function = Console.ReadLine(); // this requires the user to type in an option, but it does not go to said option
+
                 if (petCat.Contains(function)) 
                 {
                     PetCat();
@@ -113,14 +113,14 @@ namespace CatATM
                 }
                 else if(function == "Log out" || function == "log out" || function == "logout")
                 {
-                    Console.WriteLine("Thanks fpr using the Cat ATM.");
-                    Console.WriteLine("Press enter to log out");
+                    Console.WriteLine("Thanks for using the Cat ATM.");
+                    Console.WriteLine("Press enter to log out and exit the program.");
                     Console.ReadLine();
                     Environment.Exit(0);
                 }
                 else
                 {
-                    Console.WriteLine("Please type in your choice:");
+                    Console.WriteLine("\nPlease type in your choice:\n");
                 }
             }
         }
@@ -130,7 +130,24 @@ namespace CatATM
             int petCat;
             try
             {
-                Console.Write("How many pets will you pet the cat?");
+                Console.Write("\nHow many pets will you pet the cat?\n");
+                petCat = Convert.ToInt32(Console.ReadLine());
+
+                if (petCat <= 5)
+                {
+                    Console.WriteLine("\nError! You are not petting the cat enough! Please have more than 5 pets!");
+                    PetCat();
+                }
+                else
+                {
+                    Console.WriteLine("You've petted the cat " + petCat + " times!");
+                }
+            }
+            finally
+            {
+                Console.WriteLine("\nPress enter to return back to the main menu...\n");
+                Utilities.PressEnter();
+                CatChoices(); // awaits the user to press enter to return to main menu
             }
         }
 
@@ -139,16 +156,18 @@ namespace CatATM
             int feedCat;
             try
             {
-                Console.Write("How much food will you feed the cat?");
+                Console.Write("\nHow much food will you feed the cat?\n");
                 feedCat = Convert.ToInt32(Console.ReadLine());
 
                 if (feedCat >= 10)
                 {
-                    Console.WriteLine("Cat Error!! Invalid food amount! Your choice must be lower than 10 ounces!");
+                    Console.WriteLine("\nCat Error!! Too much food!\n \nYour choice must be lower than 10 ounces!\n");
+                    FeedCat();
                 }
                 else
                 {
-                    Console.WriteLine("You have fed " + feedCat + "ounces of food!");
+                    Console.WriteLine("You have fed the cat " + feedCat + " ounces of food!");
+                    Console.WriteLine("\nThe cat is now fed!\n");
                 }
             }
             catch (Exception ex)
@@ -156,13 +175,32 @@ namespace CatATM
                 Console.WriteLine(ex.Message);
             }
         }
-
-
-        // TODO: create full functions for the rest of the options
         
-        private static void PlayCat()
+        private void PlayCat()
         {
-            throw new NotImplementedException();
+            int playCat;
+            try
+            {
+                Console.Write("\nHow many toys will you play with the cat?\n");
+                playCat = Convert.ToInt32(Console.ReadLine());
+
+                if (playCat <= 5)
+                {
+                    Console.WriteLine("\nError! You did not add enough toys to satisfy the cat!");
+                    PlayCat();
+                }
+                else
+                {
+                    Console.WriteLine("You have gave the cat " + playCat + " toys to play around with!");
+                    Console.WriteLine("\nThe cat is now satisfied!\n");
+                }
+            }
+            finally
+            {
+                Console.WriteLine("\nPress enter to return back to the main menu...\n");
+                Utilities.PressEnter();
+                CatChoices(); // awaits the user to press enter to return to main menu
+            }
         }
     }
 }
