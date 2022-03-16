@@ -35,6 +35,9 @@ Pin Number: 2468
 *For demonstration purposes: if you log in as User Account 3, 
 *the program will give you a lock out error message*
 
+-------------------------------------------------------
+
+
 After logging in successfully you are given several choices:
 
 Pet the cat, feed the cat, play with the cat, or log out of the program.
