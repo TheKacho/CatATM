@@ -7,6 +7,8 @@ I have created this program with the idea in mind to create a simple ATM teller 
 but with the behavior of a cat!
 
 
+-------------------------------------------------------
+
 Project requirements for what I am targeting:
 
 Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
@@ -34,13 +36,18 @@ Pin Number: 2468
 *the program will give you a lock out error message*
 
 -------------------------------------------------------
+
+
 After logging in successfully you are given several choices:
 
 Pet the cat, feed the cat, play with the cat, or log out of the program.
 
 To choose, your commands to type in are:
 
-Pet cat
-Feed cat
-Play cat
-Log out 
+  Pet cat
+
+  Feed cat
+
+  Play cat
+
+  Log out 
