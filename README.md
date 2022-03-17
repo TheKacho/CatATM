@@ -13,11 +13,15 @@ Project requirements for what I am targeting:
 
 Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
 
+Read data from an external file, such as text, JSON, CSV, etc and use that data in your application
+
 Create an additional class which inherits one or more properties from its parent
 
 Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program
 
 Analyze text and display information about it (ex: how many words in a paragraph)
+
+
 
 ---------------------------------------------
 Notes and instructions: 
@@ -40,7 +44,7 @@ Pin Number: 2468
 
 After logging in successfully you are given several choices:
 
-Pet the cat, feed the cat, play with the cat, or log out of the program.
+Pet the cat, feed the cat, play with the cat, find information about the app, or log out of the program.
 
 To choose, your commands to type in are:
 
@@ -49,5 +53,7 @@ To choose, your commands to type in are:
   Feed cat
 
   Play cat
+  
+  About
 
   Log out 
