@@ -112,7 +112,7 @@ namespace CatATM
                     PlayCat();
                     break;
                 }
-                else if(function == "about")
+                else if(function == "About")
                 {
                     AboutCat();
                     break;
