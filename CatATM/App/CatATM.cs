@@ -3,6 +3,7 @@ using CatATM.Domain.Interface;
 using CatATM.UI;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading;
 
@@ -92,8 +93,8 @@ namespace CatATM
             while (true)
             {
                 Console.WriteLine("\nHow do you want to interact with the cat?\n");
-                Console.WriteLine("\nPet the cat, feed it with treats, play around with toys, or log out?\n");
-                Console.Write("\nWhich would you like to do?\n");
+                Console.WriteLine("\nPet the cat, feed it with treats, play around with toys, learn about the program, or log out?\n");
+                Console.Write("\n\nWhich would you like to do?\n\n");
                 function = Console.ReadLine(); // this requires the user to type in the key words in order to get to the option
 
                 if (petCat.Contains(function)) 
@@ -111,6 +112,11 @@ namespace CatATM
                     PlayCat();
                     break;
                 }
+                else if(function == "about")
+                {
+                    AboutCat();
+                    break;
+                }
                 else if(function == "Log out" || function == "log out" || function == "logout")
                 {
                     Console.WriteLine("Thanks for using the Cat ATM.");
@@ -122,6 +128,30 @@ namespace CatATM
                 {
                     Console.WriteLine("\nPlease type in your choice:\n");
                 }
+            }
+        }
+
+        private void AboutCat()
+        {
+            try
+            {                
+                using (StreamReader sr = new StreamReader("AboutCat.txt"))
+                {
+                    string line;
+                    // Reads the line from the text file
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(line);
+                        CatChoices();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                // Informs the user about what the error is
+                Console.WriteLine("\n Cat Error! The file could not be read!");
+                Console.WriteLine(e.Message);
+                CatChoices();
             }
         }
 
