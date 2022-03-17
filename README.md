@@ -50,4 +50,6 @@ To choose, your commands to type in are:
 
   Play cat
 
+  about
+  
   Log out 
