@@ -23,7 +23,9 @@ Arm64
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-windows-arm64-installer
 
 
-Apple:
+
+Apple/MAC:
+
 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-macos-x64-installer
 
 
