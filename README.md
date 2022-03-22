@@ -5,6 +5,28 @@ This is the README for the CatATM!
 This program is for the Code Louisville Capstone Project for Jan 2022 cohort.
 I have created this program with the idea in mind to create a simple ATM teller program,
 but with the behavior of a cat!
+-------------------------------------------------------
+
+Project Requisites
+
+Prior to running the CatATM app, it requires .NET 5.0 installed to PC/MAC to properly work.
+
+Windows:
+
+x86
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-windows-x86-installer
+
+x64
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-windows-x64-installer
+
+Arm64
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-windows-arm64-installer
+
+
+Apple:
+https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-5.0.406-macos-x64-installer
+
+
 
 
 -------------------------------------------------------
