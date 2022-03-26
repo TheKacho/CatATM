@@ -7,9 +7,12 @@ I have created this program with the idea in mind to create a simple ATM teller 
 but with the behavior of a cat!
 -------------------------------------------------------
 
-Project Requisites
+Project Requisites / System Requirements
 
 Prior to running the CatATM app, it requires .NET 5.0 installed to PC/MAC to properly work.
+
+
+If your PC does not have .NET 5.0 installed, please select one of the following links to install .NET 5.0 on your system of choice.
 
 Windows:
 
@@ -62,6 +65,9 @@ Pin Number: 2468
 
 *For demonstration purposes: if you log in as User Account 3, 
 *the program will give you a lock out error message*
+
+*The program will allow three attempts per each account (minus the third account)*
+*If your third and last login is unsuccessful, then the app will lock you out and the program will flag the account as "locked"*
 
 -------------------------------------------------------
 
