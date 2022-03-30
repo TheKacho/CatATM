@@ -76,14 +76,14 @@ After logging in successfully you are given several choices:
 
 Pet the cat, feed the cat, play with the cat, find information about the app, or log out of the program.
 
-To choose, your commands to type in are:
+To choose, your commands to type in are (I have added alternate commands for more accessibility):
 
-  Pet cat
+  pet cat, pet, 1
 
-  Feed cat
+  feed cat, feed, 2
 
-  Play cat
+  play cat, play, 3
   
-  About
+  about, 4
 
-  Log out 
+  log out, 5  
