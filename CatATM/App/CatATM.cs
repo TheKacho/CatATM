@@ -89,11 +89,13 @@ namespace CatATM
             petCat.Add("pet cat");
             petCat.Add("pet");
             petCat.Add("Pet");
+            petCat.Add("1");
 
             while (true)
             {
                 Console.WriteLine("\nHow do you want to interact with the cat?\n");
-                Console.WriteLine("\nPet the cat, feed it with treats, play around with toys, learn about the program, or log out?\n");
+                Console.WriteLine("\nPet the cat, feed it with treats, play with the cat, learn about the program, or log out?\n");
+                Console.WriteLine("\nYour commands are:\n \n1. pet cat\n \n2. feed cat\n \n3. play cat\n \n4. about\n \n5.log out\n");
                 Console.Write("\n\nWhich would you like to do?\n\n");
                 function = Console.ReadLine(); // this requires the user to type in the key words in order to get to the option
 
@@ -102,22 +104,22 @@ namespace CatATM
                     PetCat();
                     break;
                 }
-                else if(function == "Feed the Cat" || function == "feed cat")
+                else if(function == "Feed the Cat" || function == "feed cat" || function == "feed" || function == "2")
                 {
                     FeedCat();
                     break;
                 }
-                else if(function == "Play with Cat" || function == "play cat")
+                else if(function == "Play with Cat" || function == "play cat" || function == "play" || function == "3")
                 {
                     PlayCat();
                     break;
                 }
-                else if(function == "About")
+                else if(function == "About" || function == "about" || function == "4")
                 {
                     AboutCat();
                     break;
                 }
-                else if(function == "Log out" || function == "log out" || function == "logout")
+                else if(function == "Log out" || function == "log out" || function == "logout" || function == "5")
                 {
                     Console.WriteLine("Thanks for using the Cat ATM.");
                     Console.WriteLine("Press enter to log out and exit the program.");
@@ -133,6 +135,8 @@ namespace CatATM
 
         private void AboutCat()
         {
+            Console.Clear();
+
             try
             {                
                 using (StreamReader sr = new StreamReader("AboutCat.txt"))
@@ -142,6 +146,8 @@ namespace CatATM
                     while ((line = sr.ReadLine()) != null)
                     {
                         Console.WriteLine(line);
+                        Console.WriteLine("\n\nPress enter to return back to the main menu...\n\n");
+                        Utilities.PressEnter();
                         CatChoices();
                     }
                 }
@@ -157,15 +163,18 @@ namespace CatATM
 
         private void PetCat()
         {
+            
             int petCat;
             try
             {
+                Console.Clear();
                 Console.Write("\nHow many pets will you pet the cat?\n");
                 petCat = Convert.ToInt32(Console.ReadLine());
 
                 if (petCat <= 5)
                 {
                     Console.WriteLine("\nError! You are not petting the cat enough! Please have more than 5 pets!");
+                    Utilities.PressEnter();
                     PetCat();
                 }
                 else
@@ -183,21 +192,27 @@ namespace CatATM
 
         private void FeedCat()
         {
+            
             int feedCat;
             try
             {
+                Console.Clear();
                 Console.Write("\nHow much food will you feed the cat?\n");
                 feedCat = Convert.ToInt32(Console.ReadLine());
 
                 if (feedCat >= 10)
                 {
                     Console.WriteLine("\nCat Error!! Too much food!\n \nYour choice must be lower than 10 ounces!\n");
+                    Utilities.PressEnter();
                     FeedCat();
                 }
                 else
                 {
                     Console.WriteLine("You have fed the cat " + feedCat + " ounces of food!");
                     Console.WriteLine("\nThe cat is now fed!\n");
+                    Console.WriteLine("\n\nPress enter to return back to the main menu...\n\n");
+                    Utilities.PressEnter();
+                    CatChoices();
                 }
             }
             catch (Exception ex)
@@ -211,12 +226,14 @@ namespace CatATM
             int playCat;
             try
             {
+                Console.Clear();
                 Console.Write("\nHow many toys will you play with the cat?\n");
                 playCat = Convert.ToInt32(Console.ReadLine());
 
                 if (playCat <= 5)
                 {
                     Console.WriteLine("\nError! You did not add enough toys to satisfy the cat!");
+                    Utilities.PressEnter();
                     PlayCat();
                 }
                 else
