@@ -177,6 +177,12 @@ namespace CatATM
                     Utilities.PressEnter();
                     PetCat();
                 }
+                else if(petCat == 0)
+                {
+                    Console.WriteLine("\nError! You have entered nothing!");
+                    Utilities.PressEnter();
+                    PetCat();
+                }
                 else
                 {
                     Console.WriteLine("You've petted the cat " + petCat + " times!");
@@ -242,6 +248,11 @@ namespace CatATM
                     Console.WriteLine("\nThe cat is now satisfied!\n");
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             finally
             {
                 Console.WriteLine("\nPress enter to return back to the main menu...\n");
