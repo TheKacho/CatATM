@@ -7,7 +7,12 @@ I have created this program with the idea in mind to create a simple ATM teller 
 but with the behavior of a cat!
 -------------------------------------------------------
 
-Project Requisites / System Requirements
+Project Requisites / System Requirements 
+
+
+If you have visibilty issues on light mode while running the app, please switch the console to dark mode to properly see the app.
+
+
 
 Prior to running the CatATM app, it requires .NET 5.0 installed to PC/MAC to properly work.
 
